@@ -1,3 +1,3 @@
-Делаю форму для регистрации и входа пользователей. На нативном JavaScript (ES6). Все эффекты прописаны с помощью JS самостоятельно. Проверка (валидация) формы с выводом ошибок. После регистрации пользователь сохраняется на backend (AJAX взаимодействие) и пожет попасть в личный кабинет (форма логина, проверка, AJAX, cookies).
+I make a form for registration and login users. On native javascript (ES6). All effects are recorded using JS independently. Verification (validation) of the form with the error output. After registration, the user is saved on the backend (AJAX interaction) and can get into the personal account (login form, check, AJAX, cookies).
 
-Стек технологий, которые были использованы в этом проекте: JS(ES6), CSS, AJAX, MATERIALIZE
+A stack of technologies that were used in this project: JS(ES6), CSS, AJAX, MATERIALIZE
