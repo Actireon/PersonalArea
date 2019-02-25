@@ -3,12 +3,12 @@ document.querySelectorAll('.modal-show').forEach(function (element) {
 });
 
 document.querySelectorAll('.modal-close').forEach(function (element) {
-    //closing modal on button
+    //закрываем окно на кнопке закрыть
     element.onclick = closeModal;
 });
 
 document.querySelectorAll('.modal-wrap').forEach(function (element) {
-    //closing modal on gray area
+    //закрываем окно на клике в области серой
     element.onclick = closeModal;
 });
 
@@ -16,7 +16,7 @@ function showModal() {
     let modalId = this.dataset.modal;
     document.querySelector(modalId).classList.remove('hide');
     document.onkeydown = function (event) {
-        //closing modal on ESC
+        //закрываем окно на кнопку Esc
         if (event.keyCode == 27) closeModal();
     }
 }

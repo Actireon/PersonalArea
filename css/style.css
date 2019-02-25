@@ -44,6 +44,6 @@
     overflow-y: scroll;
 }
 
-.read-rules, .read-rules-back {
+.read-rules {
     cursor: pointer;
 }
