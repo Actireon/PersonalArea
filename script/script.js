@@ -48,7 +48,7 @@ document.querySelector('#login-submit').onclick = function (event) {
     ajax('core/login.php', 'POST', login, data);
 
     function login(result) {
-        console.log(result);
+        //console.log(result);
         if (result == 2) {
             alert('Заполните поля');
         }
@@ -57,6 +57,13 @@ document.querySelector('#login-submit').onclick = function (event) {
         }
         else {
             console.log(result);
+            result = JSON.parse(result);
+            var d = new Date();
+            d.setTime(d.getTime() + (60 * 1000));
+            var expires = d.toUTCString();
+            document.cookie = `email=${result.email}; expires=${expires}; path=/`;
+            location.href = "cabinet.php";
         }
     }
 }
+
