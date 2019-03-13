@@ -59,7 +59,7 @@ document.querySelector('#login-submit').onclick = function (event) {
             console.log(result);
             result = JSON.parse(result);
             var d = new Date();
-            d.setTime(d.getTime() + (60 * 1000));
+            d.setTime(d.getTime() + (10 * 60 * 1000));
             var expires = d.toUTCString();
             document.cookie = `email=${result.email}; expires=${expires}; path=/`;
             location.href = "cabinet.php";
