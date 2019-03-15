@@ -1,13 +1,20 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let elems = document.querySelectorAll('.datepicker');
+    let instances = M.Datepicker.init(elems, {
+        "format": "yyyy-mm-dd"
+    });
+});
+
 let userEmail = getCookie('email');
 console.log(userEmail);
 ajax('core/get_user_data.php', 'POST', getUserData, { "email": userEmail });
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
@@ -24,6 +31,7 @@ function getUserData(result) {
     document.querySelector('#signup-name').value = result.name;
     document.querySelector('#signup-pass').value = result.password;
     document.querySelector('#signup-birthday').value = result.birthday;
+    M.updateTextFields();
 }
 
 document.querySelector('#signup-submit').onclick = function (event) {
@@ -41,9 +49,9 @@ document.querySelector('#signup-submit').onclick = function (event) {
 function updateUserData(result) {
     console.log(result);
     if (result == 1) {
-        alert('Данные успешно обновлены!');
+        M.toast({ html: 'Данные успешно обновлены!' })
     }
     else {
-        alert('ошибка обновления');
+        M.toast({ html: 'Ошибка обновления' })
     }
 }
