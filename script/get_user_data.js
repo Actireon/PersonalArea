@@ -49,9 +49,9 @@ document.querySelector('#signup-submit').onclick = function (event) {
 function updateUserData(result) {
     console.log(result);
     if (result == 1) {
-        M.toast({ html: 'Данные успешно обновлены!' })
+        M.toast({ html: 'Data successfully updated!' })
     }
     else {
-        M.toast({ html: 'Ошибка обновления' })
+        M.toast({ html: 'Error update' })
     }
 }

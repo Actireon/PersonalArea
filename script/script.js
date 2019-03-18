@@ -24,13 +24,15 @@ document.querySelector('#signup-submit').onclick = function (event) {
     function signup(result) {
         console.log(result);
         if (result == 2) {
-            alert('Заполните поля');
+            M.toast({ html: 'Fill in the field' });
+
         }
         else if (result == 1) {
-            alert('Успех. Теперь можно войти!');
+            M.toast({ html: 'Success. Now you can log in!' });
+            closeModal();
         }
         else {
-            alert('Ошибка, повторите регистрацию позже!');
+            M.toast({ html: 'Error' });
         }
     }
 }
@@ -50,10 +52,11 @@ document.querySelector('#login-submit').onclick = function (event) {
     function login(result) {
         //console.log(result);
         if (result == 2) {
-            alert('Заполните поля');
+            M.toast({ html: 'Fill in the field' });
         }
         else if (result == 0) {
-            alert('Пользователь не найден!');
+            M.toast({ html: 'User is not defined!' });
+
         }
         else {
             console.log(result);
